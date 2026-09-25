@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Task Tracker</title>
+    <script src="setC.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 1rem;
+        }
+
+        main {
+            max-width: 32rem;
+        }
+
+        label, input, select, textarea, button {
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        input, select, textarea, button {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 0.65rem;
+            font: inherit;
+        }
+
+        textarea {
+            min-height: 5rem;
+            resize: vertical;
+        }
+
+        button {
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        #taskInfo {
+            padding: 1rem;
+            background: #eeeeee;
+        }
+
+        #messageArea {
+            min-height: 1.5rem;
+            color: rgb(142, 200, 216);
+        }
+
+        #taskList {
+            padding-left: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+    <main id="taskContainer">
+        <h1>Personal Task Tracker</h1>
+
+        <section id="taskInfo" aria-label="Task information">
+            <h2 id="taskName">Morning Exercise</h2>
+            <p id="duration">Duration: 30 minutes</p>
+            <p id="messageArea" aria-live="polite"></p>
+        </section>
+
+        <label for="statusSelect">Status</label>
+        <select id="statusSelect">
+            <option value="Planned">Planned</option>
+            <option value="Doing">Doing</option>
+            <option value="Done">Done</option>
+        </select>
+
+        <label for="messageInput">Message</label>
+        <textarea id="messageInput" placeholder="Write a message"></textarea>
+
+        <button id="updateTaskButton" type="button">Update Task</button>
+
+        <form id="newTaskForm">
+            <label for="newTaskInput">New task</label>
+            <input id="newTaskInput" type="text" required placeholder="Enter a new task">
+            <button type="submit">Submit</button>
+        </form>
+
+        <ul id="taskList"></ul>
+    </main>
+</body>
+</html>
